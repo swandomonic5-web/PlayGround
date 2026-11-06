@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#101619" />
+  <title>Liberty District — First Person</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <main id="game-shell">
+    <canvas id="game" aria-label="First person city game"></canvas>
+    <div class="grain"></div>
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Liberty District home"><span class="brand-mark">LD</span><span>LIBERTY <b>DISTRICT</b></span></a>
+      <div class="top-right"><span class="district-tag"><i></i> PORTSIDE · 09:42 PM</span><button class="icon-btn" id="audio-btn" aria-label="Toggle audio">♫</button><button class="icon-btn" id="help-btn" aria-label="Show controls">?</button></div>
+    </header>
+    <section class="hud">
+      <div class="mission-card glass">
+        <div class="eyebrow"><span class="live-dot"></span> COURIER RUN <span class="mission-count" id="run-count">01 / 03</span></div>
+        <h1 id="mission-title">A quick favor</h1>
+        <p id="mission-copy">Pick up the envelope at the payphone.</p>
+        <div class="mission-progress"><span id="progress-fill"></span></div>
+        <div class="mission-foot"><span id="mission-state">NEXT · OLD TOWN</span><span id="mission-reward">+$250</span></div>
+      </div>
+      <div class="status-card glass"><span class="status-label">WALLET</span><strong id="wallet">$1,250</strong><span class="status-sep"></span><span class="status-label">REP</span><strong class="rep-value" id="rep">01</strong></div>
+    </section>
+    <div class="objective" id="objective"><span class="objective-icon">⌖</span><span><b>OBJECTIVE</b><em id="objective-text">Find the payphone</em></span><span class="objective-distance" id="distance">142 m</span></div>
+    <div class="crosshair" id="crosshair"><i></i><i></i></div>
+    <div class="car-hud" id="car-hud"><div class="speed-wrap"><strong id="speed">000</strong><span>KM/H</span></div><div class="gear">D</div><div class="fuel"><span></span></div></div>
+    <div class="toast" id="toast"></div>
+    <div class="radio glass" id="radio"><span class="radio-mark">♫</span><span><b id="track-name">NIGHT DRIVE FM</b><small id="track-sub">TALK RADIO · 98.6</small></span><span class="radio-bars"><i></i><i></i><i></i><i></i></span></div>
+    <div class="minimap-frame"><canvas id="minimap" width="180" height="180"></canvas><span class="map-label">PORTSIDE</span></div>
+    <div class="interaction" id="interaction"><kbd>E</kbd><span>Enter vehicle</span></div>
+    <div class="mobile-controls" id="mobile-controls"><button data-control="forward">▲</button><div><button data-control="left">◀</button><button data-control="back">▼</button><button data-control="right">▶</button></div><button class="mobile-action" data-control="action">E</button><button class="look-zone" data-control="look">LOOK</button></div>
+    <button class="start-screen" id="start-screen"><span class="start-kicker">A CITY AFTER DARK</span><span class="start-title">LIBERTY<br/><em>DISTRICT</em></span><span class="start-sub">FIRST PERSON · OPEN CITY</span><span class="start-action">CLICK TO STEP INSIDE <b>↗</b></span><span class="start-foot">WASD MOVE <i>·</i> MOUSE LOOK <i>·</i> E INTERACT <i>·</i> SHIFT SPRINT</span></button>
+    <div class="help-panel glass" id="help-panel"><button class="close-help" id="close-help">×</button><div class="eyebrow">FIELD NOTES</div><h2>Make your own way.</h2><p>Take a courier run, explore the neighborhood, and earn a little trust. The city is yours to wander.</p><div class="key-row"><kbd>W A S D</kbd><span>Walk / drive</span></div><div class="key-row"><kbd>MOUSE</kbd><span>Look around</span></div><div class="key-row"><kbd>E</kbd><span>Interact / enter car</span></div><div class="key-row"><kbd>SHIFT</kbd><span>Sprint on foot</span></div><div class="key-row"><kbd>SPACE</kbd><span>Brake in car</span></div><div class="help-tip">Follow the amber marker to pick up and deliver your package.</div></div>
+    <div class="fade-overlay" id="fade-overlay"></div>
+  </main>
+  <script type="module" src="./main.js"></script>
+</body>
+</html>
