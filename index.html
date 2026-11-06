@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#171c1b" />
+  <title>Vvardenfell — Ashes of the Lost</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="game"></div>
+  <div class="vignette"></div>
+  <div id="title-screen" class="title-screen">
+    <div class="title-backdrop"></div>
+    <div class="title-content">
+      <div class="eyebrow"><span></span> THE ASHEN FRONTIER <span></span></div>
+      <h1>VVARDENFELL</h1>
+      <div class="subtitle">ASHES OF THE LOST</div>
+      <p class="intro">A forgotten island. A scattered soul.<br>Three embers stand between you and the truth.</p>
+      <button id="begin" class="primary-button">ENTER THE ASHES <span>→</span></button>
+      <div class="title-note">A small open-world adventure</div>
+    </div>
+    <div class="title-footer"><span>AN ORIGINAL FANTASY ADVENTURE</span><span>WALK · DISCOVER · SURVIVE</span></div>
+  </div>
+  <div id="hud" class="hud hidden">
+    <header class="topbar">
+      <div class="brand"><i class="brand-mark">✦</i><div><b>VVARDENFELL</b><small>THE ASHEN FRONTIER</small></div></div>
+      <div class="compass"><span class="compass-letter">N</span><div class="compass-track"><i></i><i></i><i></i><i></i><b></b><i></i><i></i><i></i><i></i></div><span class="compass-letter">S</span></div>
+      <button class="sound-toggle" id="sound-toggle" aria-label="Toggle sound">♫ <span>SOUND ON</span></button>
+    </header>
+    <section class="quest-card">
+      <div class="quest-label">CURRENT QUEST</div>
+      <div id="quest-title" class="quest-title">The Embers Remember</div>
+      <div id="quest-objective" class="quest-objective">Find the three lost embers</div>
+      <div class="quest-progress"><div id="quest-progress"></div></div>
+      <div id="quest-count" class="quest-count">0 / 3</div>
+    </section>
+    <div class="bottom-left">
+      <div class="status-row"><span>VITALITY</span><b id="health-value">100</b></div>
+      <div class="bar health-bar"><div id="health-fill"></div><span></span></div>
+      <div class="status-row magicka-label"><span>FOCUS</span><b>✧</b></div>
+      <div class="bar magicka-bar"><div></div></div>
+      <div class="location"><i>⌖</i><span id="location-name">THE ASHEN COAST</span></div>
+    </div>
+    <div class="bottom-right"><div class="controls-hint"><kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd><span>MOVE</span><kbd>SHIFT</kbd><span>RUN</span></div><div class="controls-hint"><kbd>E</kbd><span>INTERACT</span><kbd>CLICK</kbd><span>STRIKE</span><kbd>ESC</kbd><span>PAUSE</span></div></div>
+    <div id="crosshair"><i></i><i></i><i></i><i></i><b></b></div>
+    <div id="prompt" class="prompt hidden"><kbd>E</kbd><span>INTERACT</span></div>
+    <div id="toast" class="toast"></div>
+    <div id="damage-flash" class="damage-flash"></div>
+    <div id="pause-screen" class="pause-screen hidden"><div class="pause-card"><div class="eyebrow">TAKE A BREATH</div><h2>PAUSED</h2><p>The wind still remembers your name.</p><button id="resume" class="primary-button">RETURN TO THE ISLAND <span>→</span></button><div class="pause-help">WASD move &nbsp;·&nbsp; Shift run &nbsp;·&nbsp; Click strike &nbsp;·&nbsp; E interact</div></div></div>
+    <div id="ending" class="ending hidden"><div class="ending-card"><div class="eyebrow">THE ISLAND REMEMBERS</div><h2>THE EMBERS<br>ARE HOME</h2><p>You carried the last light through a sea of ash.<br>Somewhere beneath the mountain, something stirs.</p><button id="play-again" class="primary-button">WANDER ON <span>→</span></button></div></div>
+  </div>
+  <script type="module" src="game.js"></script>
+</body>
+</html>
